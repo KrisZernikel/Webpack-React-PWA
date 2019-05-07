@@ -35,7 +35,9 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env.ASSET_PATH": JSON.stringify(ASSET_PATH)
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "static/css/[name].[contenthash].css"
+    }),
     new OptimizeCssAssetsPlugin(),
     new HtmlWebpackPlugin({
       template: "public/index.html",
@@ -45,7 +47,7 @@ module.exports = {
       clientsClaim: true,
       skipWaiting: true,
       navigateFallback: "/index.html",
-      navigateFallbackWhitelist: [/^\/home/, /^\/learn/]
+      navigateFallbackWhitelist: [/^\/home$/g, /^\/learn$/g]
     })
   ],
   module: {
@@ -72,7 +74,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "static/js/[name].[contenthash].js",
     path: path.resolve(__dirname, "../build"),
     publicPath: ASSET_PATH,
     pathinfo: false

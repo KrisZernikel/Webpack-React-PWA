@@ -8,6 +8,8 @@ import {
 import React, { Suspense, lazy, memo } from "react";
 import ReactDOM from "react-dom";
 
+import "./index.css";
+
 const Home = lazy(() => import("./pages/Home"));
 const Learn = lazy(() => import("./pages/Learn"));
 
