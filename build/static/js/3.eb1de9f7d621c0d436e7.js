@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{zldw:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),c=t.n(a),l=Object(a.memo)(function(){return c.a.createElement(c.a.Fragment,null,c.a.createElement("h1",null,"Home..."))});n.default=l}}]);
