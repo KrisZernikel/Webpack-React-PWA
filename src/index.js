@@ -2,13 +2,13 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink,
   Redirect
 } from "react-router-dom";
 import React, { Suspense, lazy, memo } from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
+import Navbar from "./core/navbar/Navbar";
 
 const Home = lazy(() => import("./pages/Home"));
 const Learn = lazy(() => import("./pages/Learn"));
@@ -25,10 +25,7 @@ const App = memo(function App() {
       <Route
         render={({ location }) => (
           <React.Fragment>
-            <nav>
-              <NavLink to="/home">Home</NavLink>
-              <NavLink to="/learn">Learn</NavLink>
-            </nav>
+            <Navbar />
             <Suspense fallback={<div>Loading...</div>}>
               <Route exact path="/" render={() => <Redirect to="/home" />} />
               <Switch location={location}>
