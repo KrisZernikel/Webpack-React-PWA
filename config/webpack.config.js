@@ -12,9 +12,7 @@ const ASSET_PATH = process.env.ASSET_PATH || "/";
 
 module.exports = {
   mode: "production",
-  entry: {
-    app: "./src/index.js"
-  },
+  entry: "./src/index.js",
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
@@ -74,7 +72,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: "static/js/[name].[contenthash].js",
+    filename: "static/js/[contenthash].js",
     path: path.resolve(__dirname, "../build"),
     publicPath: ASSET_PATH,
     pathinfo: false
